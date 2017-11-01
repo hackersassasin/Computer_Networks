@@ -1,0 +1,53 @@
+#! /user/bin
+import os
+print "\n Copying .deb file from our computer to remote computer \n"
+os.system("scp texmaker_ubuntu_14.04_4.5_i386.deb proglab@proglab-Optiplex-3010@192.168.0.140:/home/proglab/ ")
+print "\n Copy completed \n"
+os.system("ssh -t proglab@proglab-Optiplex-3010@192.168.0.140 sudo dpkg -i texmaker_ubuntu_14.04_4.5_i386.deb \n")
+print "\n ************** Installation completed..!! *********************\n"
+
+
+'''
+output
+proglab@proglab:~$ sudo python dhcpr.py
+[sudo] password for proglab: 
+
+ Copying .deb file from our computer to remote computer 
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+5e:c3:da:d4:26:df:65:5f:31:d3:a3:6c:bc:78:d3:d8.
+Please contact your system administrator.
+Add correct host key in /root/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /root/.ssh/known_hosts:1
+  remove with: ssh-keygen -f "/root/.ssh/known_hosts" -R 192.168.0.141
+ECDSA host key for 192.168.0.141 has changed and you have requested strict checking.
+Host key verification failed.
+lost connection
+
+ Copy completed 
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+5e:c3:da:d4:26:df:65:5f:31:d3:a3:6c:bc:78:d3:d8.
+Please contact your system administrator.
+Add correct host key in /root/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /root/.ssh/known_hosts:1
+  remove with: ssh-keygen -f "/root/.ssh/known_hosts" -R 192.168.0.141
+ECDSA host key for 192.168.0.141 has changed and you have requested strict checking.
+Host key verification failed.
+
+ ************** Installation completed..!! *********************
+
+proglab@proglab:~$ 
+'''

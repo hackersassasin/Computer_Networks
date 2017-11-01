@@ -1,0 +1,7 @@
+
+running c and cpp programs
+
+gcc/g++ <program name> -o <program name>.out
+./<program name>.out
+
+
